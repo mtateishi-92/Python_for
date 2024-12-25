@@ -1,10 +1,18 @@
 import random
+import sys
+
+def input_judge(player_input):
+    if player_input < 0 or 2 < player_input:
+        print('0から1までの半角数字を入力してください。')
+        sys.exit()
 
 print('じゃんけんを始めます。')
-player_input = input('数字を入力してください（0：グー、1：チョキ、2：パー）：')
+player_input = int(input('数字を入力してください（0：グー、1：チョキ、2：パー）：'))
 lists = ['グー', 'チョキ', 'パー']
 
-player = lists[int(player_input)]
+input_judge(player_input)
+
+player = lists[player_input]
 com = random.choice(lists)
 
 print('あなたは' + player + 'をだしました。')
